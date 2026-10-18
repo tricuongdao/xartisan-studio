@@ -13,11 +13,16 @@ const ROOT = path.resolve(__dirname, "..", "site");
 const PORT = Number(process.env.PORT || 8788);
 const HOST = process.env.HOST || "127.0.0.1";
 
+const legacy = JSON.parse(await readFile(path.join(ROOT, "redirects.json"), "utf8"));
+const REDIRECTS = new Map(legacy.map(({ from, to }) => [from, to]));
+const PREFIX_REDIRECTS = new Map([
+  ["/du-an", "/projects"],
+  ["/ximitech", "/xartisan"],
+]);
+
 // URL behavior:
-//  - /dich-vu (and /dich-vu/) 301 -> /thiet-ke-website (host-level redirect; app also aliases it)
-//  - unknown paths under /blog/ and /du-an/ serve the generic SPA shell with 200
+//  - unknown paths under /blog/ and /projects/ serve the generic SPA shell with 200
 //  - every other unknown path (incl. missing assets) serves the site's 404 page with status 404
-const REDIRECTS = new Map([["/dich-vu", "/thiet-ke-website"]]);
 const SHELL_PAGE = path.join(ROOT, "index.html");
 const NOT_FOUND_PAGE = path.join(ROOT, "404", "index.html");
 // Exact 301 body kept for stable redirect output.
@@ -83,9 +88,20 @@ const server = http.createServer(async (req, res) => {
     }
     const urlPath = decodeURIComponent(((req.url || "/").split("?")[0]).split("#")[0]);
     const norm = urlPath.length > 1 ? urlPath.replace(/\/+$/, "") : urlPath;
-    if (REDIRECTS.has(norm)) {
+    let target = REDIRECTS.get(norm);
+    if (!target) {
+      for (const [from, to] of PREFIX_REDIRECTS) {
+        if (norm === from || norm.startsWith(from + "/")) {
+          target = to + norm.slice(from.length);
+          break;
+        }
+      }
+    }
+    if (target) {
+      const qi = (req.url || "").indexOf("?");
+      const query = qi === -1 ? "" : (req.url || "").slice(qi);
       const body = req.method === "HEAD" ? "" : REDIRECT_BODY;
-      res.writeHead(301, { Location: REDIRECTS.get(norm), "Content-Type": "text/html", "Content-Length": Buffer.byteLength(body), "Cache-Control": "no-cache" });
+      res.writeHead(301, { Location: target + query, "Content-Type": "text/html", "Content-Length": Buffer.byteLength(body), "Cache-Control": "no-cache" });
       return res.end(body);
     }
     let abs = resolveSafe(req.url || "/");
@@ -99,7 +115,7 @@ const server = http.createServer(async (req, res) => {
     if (!found) {
       // No matching file: use the site's configured fallback.
       const hasExt = path.extname(norm) !== "";
-      const nsShell = !hasExt && /^\/(blog|du-an)(\/|$)/.test(norm);
+      const nsShell = !hasExt && /^\/(blog|projects)(\/|$)/.test(norm);
       const page = nsShell ? SHELL_PAGE : NOT_FOUND_PAGE;
       try {
         const stPage = await stat(page);

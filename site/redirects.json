@@ -1,0 +1,350 @@
+[
+  {
+    "from": "/thiet-ke-website",
+    "to": "/website-design"
+  },
+  {
+    "from": "/thiet-ke-website-doanh-nghiep",
+    "to": "/business-website-design"
+  },
+  {
+    "from": "/thiet-ke-website-ban-hang",
+    "to": "/ecommerce-website-design"
+  },
+  {
+    "from": "/thiet-ke-landing-page",
+    "to": "/landing-page-design"
+  },
+  {
+    "from": "/lap-trinh-web-app",
+    "to": "/web-app-development"
+  },
+  {
+    "from": "/dich-vu-seo-website",
+    "to": "/seo-services"
+  },
+  {
+    "from": "/bang-gia-thiet-ke-website",
+    "to": "/website-design-pricing"
+  },
+  {
+    "from": "/gioi-thieu",
+    "to": "/about"
+  },
+  {
+    "from": "/ho-so-nang-luc",
+    "to": "/capabilities"
+  },
+  {
+    "from": "/quy-trinh-thiet-ke-website",
+    "to": "/website-design-process"
+  },
+  {
+    "from": "/bao-hanh-bao-tri-website",
+    "to": "/website-maintenance"
+  },
+  {
+    "from": "/lien-he",
+    "to": "/contact"
+  },
+  {
+    "from": "/tuyen-dung",
+    "to": "/careers"
+  },
+  {
+    "from": "/du-an",
+    "to": "/projects"
+  },
+  {
+    "from": "/tim-kiem",
+    "to": "/search"
+  },
+  {
+    "from": "/du-an/vinhomes-saigon-park",
+    "to": "/projects/vinhomes-saigon-park"
+  },
+  {
+    "from": "/du-an/brothers-renovate",
+    "to": "/projects/brothers-renovate"
+  },
+  {
+    "from": "/du-an/palm-river-huong-viet",
+    "to": "/projects/palm-river-huong-viet"
+  },
+  {
+    "from": "/du-an/hqn-group",
+    "to": "/projects/hqn-group"
+  },
+  {
+    "from": "/du-an/dong-khoi-thuong-hieu-viet",
+    "to": "/projects/dong-khoi-viet-brand"
+  },
+  {
+    "from": "/du-an/woodland",
+    "to": "/projects/woodland"
+  },
+  {
+    "from": "/du-an/quoc-bao-computer",
+    "to": "/projects/quoc-bao-computer"
+  },
+  {
+    "from": "/du-an/do-hai-vuong-nam",
+    "to": "/projects/do-hai-vuong-nam"
+  },
+  {
+    "from": "/du-an/lumine-cloud",
+    "to": "/projects/lumine-cloud"
+  },
+  {
+    "from": "/du-an/tcs-global",
+    "to": "/projects/tcs-global"
+  },
+  {
+    "from": "/du-an/leaf-hotel-danang-ta",
+    "to": "/projects/leaf-hotel-da-nang"
+  },
+  {
+    "from": "/du-an/kts-luu-van-vu",
+    "to": "/projects/kts-luu-van-vu"
+  },
+  {
+    "from": "/du-an/miea-noi-that",
+    "to": "/projects/miea-interiors"
+  },
+  {
+    "from": "/du-an/danh-ngoc-heavy-transport",
+    "to": "/projects/danh-ngoc-heavy-transport"
+  },
+  {
+    "from": "/du-an/asteraceae",
+    "to": "/projects/asteraceae"
+  },
+  {
+    "from": "/du-an/dastin-hullor",
+    "to": "/projects/dastin-hullor"
+  },
+  {
+    "from": "/du-an/raymoire",
+    "to": "/projects/raymoire"
+  },
+  {
+    "from": "/du-an/stwatch",
+    "to": "/projects/stwatch"
+  },
+  {
+    "from": "/du-an/jk-florist",
+    "to": "/projects/jk-florist"
+  },
+  {
+    "from": "/du-an/blue-whale-trading",
+    "to": "/projects/blue-whale-trading"
+  },
+  {
+    "from": "/du-an/aplus-billiards",
+    "to": "/projects/aplus-billiards"
+  },
+  {
+    "from": "/du-an/phong-thuy-a-dong",
+    "to": "/projects/feng-shui-a-dong"
+  },
+  {
+    "from": "/du-an/hrm-manh-long-hoa-lu",
+    "to": "/projects/hrm-manh-long-hoa-lu"
+  },
+  {
+    "from": "/du-an/apes-studio",
+    "to": "/projects/apes-studio"
+  },
+  {
+    "from": "/du-an/q8-store-vietnam",
+    "to": "/projects/q8-store-vietnam"
+  },
+  {
+    "from": "/du-an/shi-thai",
+    "to": "/projects/shi-thai"
+  },
+  {
+    "from": "/du-an/glambot-vietnam",
+    "to": "/projects/glambot-vietnam"
+  },
+  {
+    "from": "/du-an/zixue",
+    "to": "/projects/zixue"
+  },
+  {
+    "from": "/du-an/astra-education",
+    "to": "/projects/astra-education"
+  },
+  {
+    "from": "/du-an/lamsala",
+    "to": "/projects/lamsala"
+  },
+  {
+    "from": "/du-an/ppf-dong-nai",
+    "to": "/projects/ppf-dong-nai"
+  },
+  {
+    "from": "/du-an/engmind-study",
+    "to": "/projects/engmind-study"
+  },
+  {
+    "from": "/du-an/hoc-nghe-truc-tuyen",
+    "to": "/projects/online-vocational-training"
+  },
+  {
+    "from": "/du-an/doux-nails-lounge",
+    "to": "/projects/doux-nails-lounge"
+  },
+  {
+    "from": "/du-an/nam-key",
+    "to": "/projects/nam-key"
+  },
+  {
+    "from": "/du-an/court-vision",
+    "to": "/projects/court-vision"
+  },
+  {
+    "from": "/du-an/propfirm-edge",
+    "to": "/projects/propfirm-edge"
+  },
+  {
+    "from": "/du-an/farmstay-viet-nam",
+    "to": "/projects/farmstay-vietnam"
+  },
+  {
+    "from": "/du-an/md-decor-pro",
+    "to": "/projects/md-decor-pro"
+  },
+  {
+    "from": "/du-an/vinfast-huy-hieu",
+    "to": "/projects/vinfast-huy-hieu"
+  },
+  {
+    "from": "/blog/ngan-sach-website-nam-dau",
+    "to": "/blog/website-budget-first-year"
+  },
+  {
+    "from": "/blog/bao-tri-website-gom-nhung-gi",
+    "to": "/blog/website-maintenance-checklist"
+  },
+  {
+    "from": "/blog/do-luong-website-ga4-search-console",
+    "to": "/blog/website-analytics-ga4-search-console"
+  },
+  {
+    "from": "/blog/bao-mat-website-ssl-sao-luu-cap-nhat",
+    "to": "/blog/website-security-ssl-backups-updates"
+  },
+  {
+    "from": "/blog/checklist-landing-page-chay-quang-cao",
+    "to": "/blog/landing-page-checklist-for-ads"
+  },
+  {
+    "from": "/blog/khi-nao-nen-lam-lai-website",
+    "to": "/blog/when-to-redesign-your-website"
+  },
+  {
+    "from": "/blog/seo-local-google-business-profile",
+    "to": "/blog/local-seo-google-business-profile"
+  },
+  {
+    "from": "/blog/ban-tren-san-hay-lam-website-rieng",
+    "to": "/blog/marketplace-or-own-website"
+  },
+  {
+    "from": "/blog/toi-uu-toc-do-website-core-web-vitals",
+    "to": "/blog/website-speed-core-web-vitals"
+  },
+  {
+    "from": "/blog/viet-noi-dung-website",
+    "to": "/blog/website-content-writing"
+  },
+  {
+    "from": "/blog/chi-phi-an-khi-lam-website-gia-re",
+    "to": "/blog/hidden-costs-of-cheap-websites"
+  },
+  {
+    "from": "/blog/hop-dong-thiet-ke-website",
+    "to": "/blog/website-design-contract"
+  },
+  {
+    "from": "/blog/ten-mien-va-hosting-cho-doanh-nghiep",
+    "to": "/blog/domain-and-hosting-for-business"
+  },
+  {
+    "from": "/blog/website-doanh-nghiep-can-nhung-trang-gi",
+    "to": "/blog/pages-every-business-website-needs"
+  },
+  {
+    "from": "/blog/chi-phi-thiet-ke-website",
+    "to": "/blog/website-design-cost"
+  },
+  {
+    "from": "/blog/landing-page-la-gi",
+    "to": "/blog/what-is-a-landing-page"
+  },
+  {
+    "from": "/blog/website-chuan-seo-la-gi",
+    "to": "/blog/what-is-an-seo-friendly-website"
+  },
+  {
+    "from": "/blog/tu-lam-website-hay-thue-thiet-ke",
+    "to": "/blog/diy-or-hire-a-designer"
+  },
+  {
+    "from": "/blog/thiet-ke-website-ban-hang-can-gi",
+    "to": "/blog/what-an-ecommerce-website-needs"
+  },
+  {
+    "from": "/blog/chon-don-vi-thiet-ke-website-uy-tin",
+    "to": "/blog/how-to-choose-a-web-design-agency"
+  },
+  {
+    "from": "/blog/website-la-tai-san-so-cua-doanh-nghiep",
+    "to": "/blog/website-as-a-digital-asset"
+  },
+  {
+    "from": "/blog/doanh-nghiep-can-so-huu-gi-sau-khi-lam-website",
+    "to": "/blog/what-businesses-own-after-a-website-build"
+  },
+  {
+    "from": "/blog/tam-nhin-website-doanh-nghiep-trong-3-nam",
+    "to": "/blog/three-year-website-vision"
+  },
+  {
+    "from": "/blog/lo-trinh-phat-trien-website-sau-ban-giao",
+    "to": "/blog/website-roadmap-after-launch"
+  },
+  {
+    "from": "/blog/van-hanh-website-nhu-mot-tai-san",
+    "to": "/blog/operating-a-website-as-an-asset"
+  },
+  {
+    "from": "/blog/do-luong-hieu-qua-website-bang-ket-qua-kinh-doanh",
+    "to": "/blog/measuring-website-results-in-revenue"
+  },
+  {
+    "from": "/blog/website-trong-hanh-trinh-khach-hang-doanh-nghiep",
+    "to": "/blog/website-in-the-customer-journey"
+  },
+  {
+    "from": "/blog/website-rieng-va-cac-kenh-so-doanh-nghiep",
+    "to": "/blog/owned-website-vs-digital-channels"
+  },
+  {
+    "from": "/blog/noi-dung-website-la-tai-san-tich-luy",
+    "to": "/blog/website-content-as-compounding-asset"
+  },
+  {
+    "from": "/blog/su-menh-tam-nhin-xartisan-studio-website-la-tai-san",
+    "to": "/blog/studio-mission-vision-website-as-an-asset"
+  },
+  {
+    "from": "/blog/tong-chi-phi-so-huu-website-3-nam",
+    "to": "/blog/total-cost-of-owning-a-website-3-years"
+  },
+  {
+    "from": "/dich-vu",
+    "to": "/website-design"
+  }
+]
