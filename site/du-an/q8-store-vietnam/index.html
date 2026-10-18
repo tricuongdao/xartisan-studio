@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Đặt theme trước khi trang vẽ, tránh chớp sáng với khách đã chọn chế độ tối.
+       Mặc định là sáng; chỉ dùng tối khi khách tự chọn hoặc chọn "theo hệ thống". -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("xartisan-ui-theme");
+        var dark =
+          saved === "dark" ||
+          (saved === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+        var root = document.documentElement;
+        root.classList.remove("light", "dark");
+        root.classList.add(dark ? "dark" : "light");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Bản HTML tĩnh trong #root (data-shell) viết cho bot không chạy JavaScript.
+       Trình duyệt có JS thì React sẽ thay nó ngay, nên ẩn đi từ đầu — nếu không,
+       mỗi lần F5 khách thấy trang chữ trơn nền tối chớp lên chưa tới một giây. -->
+  <style>
+    #root > [data-shell] { display: none; }
+  </style>
+  <noscript><main style="max-width:900px;margin:auto;padding:24px;font-family:Arial,sans-serif;color:#222"><h1>Q8 Store Vietnam - Xartisan Studio project implemented</h1><p>Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes.</p><p><a href="tel:+61435878929">Call 0435 878 929</a> | <a href="mailto:hello@xartisan.studio">hello@xartisan.studio</a></p><p>Xartisan Studio · Da Nang, Vietnam.</p></main></noscript>
+
+  <!-- Màn chờ lúc tải trang. Dùng CHUNG cho hai lúc chờ: lúc trình duyệt còn tải
+       gói JavaScript chính (#boot-loader bên dưới, thuần CSS nên hiện ngay) và
+       lúc React tải riêng một trang (PageLoader trong App.tsx dùng lại đúng các
+       class này) — nên chuyển giữa hai lúc không thấy mối nối.
+       Hiện sau 250ms: mạng nhanh thì trang lên trước, không bị chớp màn chờ. -->
+  <style>
+    /* Nền theo chủ đề ngay từ đầu: CSS chính tải không chặn, nên trước khi nó
+       về trang chưa có nền — chế độ tối sẽ chớp trắng. */
+    html { background: hsl(210 40% 98%); }
+    html.dark { background: hsl(220 40% 6%); }
+    .page-loader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+      /* Màn chờ luôn tông tối + logo bản tối, ở cả chế độ sáng lẫn tối. */
+      background: radial-gradient(60% 45% at 50% 42%, hsl(200 80% 14% / .55), transparent 70%), hsl(220 40% 6%);
+      opacity: 0; animation: pl-in .35s ease .25s forwards;
+    }
+    .page-loader.pl-now { opacity: 1; animation: none; }
+    .page-loader { gap: 14px; transition: opacity .35s ease; }
+    .page-loader.pl-out { opacity: 0 !important; pointer-events: none; }
+    .page-loader img { width: 96px; height: 96px; -o-object-fit: contain; object-fit: contain; margin-bottom: 2px; animation: pl-breathe 1.8s ease-in-out infinite; }
+    .page-loader .pl-pct {
+      font: 800 30px/1 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: #fff;
+    }
+    .page-loader .pl-note { font: 500 12px/1 ui-sans-serif, system-ui, -apple-system, sans-serif; letter-spacing: .04em; color: hsl(210 20% 70% / .75); }
+    .page-loader .pl-track {
+      position: relative; width: 168px; height: 3px; overflow: hidden; border-radius: 3px;
+      background: hsl(195 100% 70% / .14);
+    }
+    .page-loader .pl-fill {
+      position: absolute; inset: 0; border-radius: 3px; transform: scaleX(0); transform-origin: left;
+      background: linear-gradient(90deg, hsl(195 100% 45%), hsl(190 95% 55%));
+    }
+    /* Không có số liệu (bản dev): thanh chạy qua lại, ẩn số %. */
+    .page-loader.pl-indeterminate .pl-pct, .page-loader.pl-indeterminate .pl-fill { display: none; }
+    .page-loader.pl-indeterminate .pl-track::after {
+      content: ""; position: absolute; inset: 0; width: 40%; border-radius: 2px;
+      background: hsl(195 100% 45%);
+      animation: pl-slide 1.1s cubic-bezier(.65,0,.35,1) infinite;
+    }
+    @keyframes pl-in { to { opacity: 1; } }
+    @keyframes pl-breathe { 50% { transform: scale(.94); opacity: .75; } }
+    @keyframes pl-slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .page-loader img, .page-loader .pl-track::after { animation: none; }
+    }
+  </style>
+
+  <title>Q8 Store Vietnam - Xartisan Studio project implemented</title>
+  <meta name="description" content="Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes." />
+  <meta name="keywords"
+    content="corporate website design, sales website design, website operation, monthly website care, custom website creation, landing page, web app, Xartisan Studio" />
+  <meta name="author" content="Xartisan Studio" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large" />
+  <meta name="bingbot" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#00d4ff" />
+  <meta name="application-name" content="Xartisan Studio" />
+  <meta name="language" content="English" />
+
+  <link rel="canonical" href="https://xartisan.studio/du-an/q8-store-vietnam" />
+  <link rel="alternate" hreflang="en" href="https://xartisan.studio/du-an/q8-store-vietnam" />
+  <link rel="alternate" hreflang="x-default" href="https://xartisan.studio/du-an/q8-store-vietnam" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="image_src" href="https://xartisan.studio/OG.png?v=7c394eb2" />
+
+  <link rel="icon" href="/favicon.ico?v=1d5e57ec" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1d5e57ec" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?v=bdc0b63e" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png?v=df80a96b" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo512.png?v=99ad16b5" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=e6797c7f" />
+
+
+  <!-- Font Epilogue/Manrope/Inter: tailwind.config.ts và index.css đều gọi tên ba font
+       này nhưng trước đây không có chỗ nào tải chúng về, nên trang rơi về font hệ thống.
+
+       Tải KHÔNG CHẶN RENDER: link stylesheet thường của Google Fonts là tài nguyên
+       cross-origin nằm trên đường găng — đo trên 4G giả lập (RTT 150ms) nó chặn
+       render ~160ms trước khi vẽ khung hình đầu tiên. Thủ thuật media="print" cho
+       trình duyệt tải file với mức ưu tiên thấp mà không chặn, rồi onload đổi lại
+       thành "all" để áp dụng. display=swap đảm bảo chữ hiện ngay bằng font hệ thống
+       và đổi sang font thật khi tải xong, không có khoảng trắng chữ.
+
+       Bỏ &subset=vietnamese: endpoint css2 bỏ qua tham số này (đã kiểm chứng — vẫn
+       trả về đủ 79 khối @font-face của mọi bảng chữ). Việc lọc do unicode-range
+       trong CSS đảm nhiệm, trình duyệt chỉ tải đúng file tiếng Việt cần dùng.
+
+       Cố tình KHÔNG thêm noscript dự phòng cho font: script pre-render
+       (scripts/generate-route-html.mjs) thay thế khối noscript ĐẦU TIÊN trong file
+       bằng nội dung riêng của từng trang, nên một khối noscript font đặt ở đây sẽ bị
+       ghi đè và làm hỏng luôn phần nội dung dành cho trình duyệt tắt JavaScript.
+       Không có font thật thì trang vẫn đọc tốt bằng font hệ thống. -->
+  <link rel="preload" as="style" href="/fonts/fonts.css" />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="/fonts/fonts.css" />
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xartisan.studio/du-an/q8-store-vietnam" />
+  <meta property="og:title" content="Q8 Store Vietnam - Xartisan Studio project implemented" />
+  <meta property="og:description" content="Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes." />
+  <meta property="og:image" content="https://xartisan.studio/OG.png?v=7c394eb2" />
+  <meta property="og:image:secure_url" content="https://xartisan.studio/OG.png?v=7c394eb2" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Xartisan Studio - Custom Websites &amp; Web Apps" />
+  <meta property="og:site_name" content="Xartisan Studio" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://xartisan.studio/du-an/q8-store-vietnam" />
+  <meta name="twitter:title" content="Q8 Store Vietnam - Xartisan Studio project implemented" />
+  <meta name="twitter:description" content="Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes." />
+  <meta name="twitter:image" content="https://xartisan.studio/OG.png?v=7c394eb2" />
+  <meta name="twitter:image:alt" content="Xartisan Studio - Custom Websites &amp; Web Apps" />
+
+  <meta name="google-site-verification" content="YN6r-yjYaXdVpbGfVmmxl6pB-bSBTbwrTTkRlRlXgt0" />
+
+  <!-- Xartisan Studio KHÔNG niêm yết giá (báo giá riêng qua WhatsApp/điện thoại), nên các
+       Offer trong schema không có price/priceSpecification. Nội dung gói lấy theo
+       src/data/brand.ts — sửa định vị thì sửa cả ở đây. -->
+  <script type="module" crossorigin src="/assets/index-DAfw2Y79.js?v=8521a3ce"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-BaqgPuim.js?v=8521a3ce">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-radix-CIIFFl0l.js?v=8521a3ce">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-icons-xx0BMbwT.js?v=8521a3ce">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-motion-B2aXCTtA.js?v=8521a3ce">
+  <link id="main-css" rel="preload" as="style" crossorigin href="/assets/index-BT757EXe.css?v=8521a3ce" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="/assets/index-BT757EXe.css?v=8521a3ce"></noscript>
+  <script>window.__XL={"s":{"index-DAfw2Y79.js":158790,"index-BT757EXe.css":40511,"vendor-react-BaqgPuim.js":68703,"vendor-radix-CIIFFl0l.js":11491,"vendor-icons-xx0BMbwT.js":16974,"vendor-motion-B2aXCTtA.js":42030,"Blog-s__qQNIp.js":2744,"SeoLayout-CuGaHTIj.js":1286,"blog-CE27P5gZ.js":342,"blogPosts-BytO_tYi.js":67006,"BlogCover-DaspM6LB.js":3930,"BlogPost-DdsJrswq.js":3788,"CapabilityProfile-DePoOAgZ.js":8319,"CurtainChapter-Q8xUbhSg.js":3049,"Careers-B2s3_nRn.js":6242,"CompanyPage-BQ4Zl90y.js":5858,"MarketingPage-BLJ5g1qS.js":5498,"NotFound-ChbCxhR4.js":752,"PrivacyPolicy-B70vyD1l.js":2465,"ProjectDetail-DyXWaEkD.js":4036,"Projects-C0kpfK7V.js":5005,"SearchPage-CSDOjFZF.js":1858,"Terms-DUW2xTNl.js":2798},"p":{"Blog":["Blog-s__qQNIp.js","SeoLayout-CuGaHTIj.js","blog-CE27P5gZ.js","blogPosts-BytO_tYi.js","BlogCover-DaspM6LB.js"],"BlogPost":["BlogPost-DdsJrswq.js","blog-CE27P5gZ.js","blogPosts-BytO_tYi.js","BlogCover-DaspM6LB.js"],"CapabilityProfile":["CapabilityProfile-DePoOAgZ.js","CurtainChapter-Q8xUbhSg.js","SeoLayout-CuGaHTIj.js"],"Careers":["Careers-B2s3_nRn.js"],"CompanyPage":["CompanyPage-BQ4Zl90y.js","SeoLayout-CuGaHTIj.js"],"MarketingPage":["MarketingPage-BLJ5g1qS.js","CurtainChapter-Q8xUbhSg.js","SeoLayout-CuGaHTIj.js"],"NotFound":["NotFound-ChbCxhR4.js"],"PrivacyPolicy":["PrivacyPolicy-B70vyD1l.js"],"ProjectDetail":["ProjectDetail-DyXWaEkD.js"],"Projects":["Projects-C0kpfK7V.js"],"SearchPage":["SearchPage-CSDOjFZF.js","SeoLayout-CuGaHTIj.js","blog-CE27P5gZ.js","blogPosts-BytO_tYi.js"],"Terms":["Terms-DUW2xTNl.js"]},"w":["/thiet-ke-website","/thiet-ke-website-doanh-nghiep","/thiet-ke-website-ban-hang","/thiet-ke-landing-page","/lap-trinh-web-app","/dich-vu-seo-website"]}</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":["Organization","ProfessionalService"],"@id":"https://xartisan.studio/#organization","name":"Xartisan Studio","legalName":"Xartisan Studio","alternateName":["XARTISAN STUDIO"],"url":"https://xartisan.studio/","logo":"https://xartisan.studio/xartisan-logo.webp?v=f444a5e1","image":"https://xartisan.studio/OG.png?v=7c394eb2","email":"hello@xartisan.studio","telephone":"+61435878929","foundingDate":"2026-06-15","founder":{"@id":"https://xartisan.studio/#tranthanhdo"},"address":{"@type":"PostalAddress","addressLocality":"Da Nang","addressCountry":"VN"},"description":"Xartisan Studio builds business websites and sales websites as an asset: the business owns 100%, Xartisan Studio protects, preserves and develops so that the website brings in customers.","slogan":"Your website is an asset. Xartisan Studio keeps it earning.","areaServed":[{"@type":"Country","name":"Vietnam","sameAs":"https://www.wikidata.org/wiki/Q881"},{"@type":"Country","name":"Australia","sameAs":"https://www.wikidata.org/wiki/Q408"},{"@type":"Country","name":"Canada","sameAs":"https://www.wikidata.org/wiki/Q16"},{"@type":"Country","name":"United States","sameAs":"https://www.wikidata.org/wiki/Q30"}],"contactPoint":{"@type":"ContactPoint","telephone":"+61435878929","contactType":"sales","availableLanguage":["English"]},"sameAs":["https://wa.me/61435878929","https://www.tiktok.com/@xartisanstudio"]},{"@context":"https://schema.org","@type":"Person","@id":"https://xartisan.studio/#tranthanhdo","name":"Tran Thanh Do","alternateName":["Xartisan Studio Degree","Tran Thanh Do Xartisan Studio","Thanh Độ Xartisan Studio"],"jobTitle":"Founder & CEO","description":"Tran Thanh Do (Do Xartisan Studio) is the founder and CEO of Xartisan Studio, leading the website, web app and SEO team since 2025.","worksFor":{"@id":"https://xartisan.studio/#organization"},"url":"https://xartisan.studio/gioi-thieu","image":"/uploads/xartisan/company-profile/v1/tranthanhdo.webp?v=8521a3ce","knowsAbout":["Website design","Web app development","SEO","Programming","Digital transformation"],"sameAs":["https://www.tiktok.com/@xartisanstudio"]},{"@context":"https://schema.org","@type":"WebSite","@id":"https://xartisan.studio/#website","name":"Xartisan Studio","url":"https://xartisan.studio/","inLanguage":"vi-VN","publisher":{"@id":"https://xartisan.studio/#organization"}},{"@context":"https://schema.org","@type":"WebPage","@id":"https://xartisan.studio/du-an/q8-store-vietnam#webpage","url":"https://xartisan.studio/du-an/q8-store-vietnam","name":"Q8 Store Vietnam - Xartisan Studio project implemented","description":"Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes.","inLanguage":"vi-VN","dateModified":"2026-06-16","isPartOf":{"@id":"https://xartisan.studio/#website"},"about":{"@id":"https://xartisan.studio/#organization"},"image":"https://xartisan.studio/OG.png?v=7c394eb2","thumbnailUrl":"https://xartisan.studio/OG.png?v=7c394eb2","primaryImageOfPage":{"@type":"ImageObject","contentUrl":"https://xartisan.studio/OG.png?v=7c394eb2","url":"https://xartisan.studio/OG.png?v=7c394eb2","width":1200,"height":630}},{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://xartisan.studio/du-an/q8-store-vietnam#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://xartisan.studio/"},{"@type":"ListItem","position":2,"name":"Q8 Store Vietnam - Xartisan Studio project implemented","item":"https://xartisan.studio/du-an/q8-store-vietnam"}]},{"@context":"https://schema.org","@type":"CreativeWork","@id":"https://xartisan.studio/du-an/q8-store-vietnam#work","name":"Q8 Store Vietnam","description":"Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes.","url":"https://xartisan.studio/du-an/q8-store-vietnam","creator":{"@id":"https://xartisan.studio/#organization"}}]</script>
+</head>
+
+<body>
+  <!-- Màn chờ có % tính thật: hiện NGAY (không chờ 250ms), logo nhúng sẵn (không phải tải ảnh),
+       % = byte các file trang cần đã tải xong / tổng byte (danh sách + dung lượng nén do
+       scripts/generate-route-html.mjs nhúng vào window.__XL lúc build). -->
+  <div id="boot-loader" class="page-loader pl-now" role="progressbar" aria-label="Loading page" aria-valuemin="0" aria-valuemax="100">
+    <img class="pl-mark" src="data:image/png;base64,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" alt="" width="96" height="96" />
+    <span class="pl-pct">0%</span>
+    <span class="pl-track"><span class="pl-fill"></span></span>
+    <span class="pl-note">Loading page…</span>
+  </div>
+  <script>
+    /* Bộ tính % của màn chờ. Đếm byte (đã nén) của đúng các file trang đang mở cần:
+       gói chính (đọc từ thẻ script/link trong <head>) + phần riêng của trang (window.__XL.p).
+       Một file được tính khi trình duyệt báo tải xong (PerformanceObserver). 60% cho tải
+       mã, 60→99% khi ảnh/font/khối 3D trên màn hình đầu về đủ (window.__xlSet, src/lib/pageReady.ts),
+       100% khi xong (window.__xlFinish). Bản dev không có
+       __XL: thanh chạy qua lại như cũ, không hiện số. */
+    (function () {
+      var L = document.getElementById("boot-loader");
+      if (!L) return;
+      var X = window.__XL, pctEl = L.querySelector(".pl-pct"), fill = L.querySelector(".pl-fill");
+      var companies = { "/gioi-thieu": 1, "/bang-gia-thiet-ke-website": 1, "/quy-trinh-thiet-ke-website": 1, "/bao-hanh-bao-tri-website": 1, "/lien-he": 1 };
+      var pageOf = function (p) {
+        p = p.replace(/\/+$/, "") || "/";
+        if (p === "/") return null;
+        if (X && X.w.indexOf(p) >= 0) return "MarketingPage";
+        if (companies[p]) return "CompanyPage";
+        if (p === "/du-an") return "Projects";
+        if (p.indexOf("/du-an/") === 0) return "ProjectDetail";
+        if (p === "/ho-so-nang-luc") return "CapabilityProfile";
+        if (p === "/tuyen-dung") return "Careers";
+        if (p === "/blog") return "Blog";
+        if (p.indexOf("/blog/") === 0) return "BlogPost";
+        if (p === "/tim-kiem") return "SearchPage";
+        if (p === "/privacy-policy") return "PrivacyPolicy";
+        if (p === "/terms") return "Terms";
+        return "NotFound";
+      };
+      window.__xlPageOf = pageOf;
+      if (!X) { L.classList.add("pl-indeterminate"); window.__xlFinish = function () { L.remove(); }; return; }
+      var need = {}, total = 0, got = 0;
+      var add = function (f) { if (f && X.s[f] && !need[f]) { need[f] = 1; total += X.s[f]; } };
+      var nameOf = function (url) { var i = url.indexOf("/assets/"); return i < 0 ? "" : url.slice(i + 8).split("?")[0]; };
+      var els = document.querySelectorAll('script[type="module"][src], link[rel="modulepreload"], link[rel="stylesheet"]');
+      for (var i = 0; i < els.length; i++) add(nameOf(els[i].src || els[i].href));
+      var page = pageOf(location.pathname);
+      ((page && X.p[page]) || []).forEach(add);
+      var mark = function (url) { var f = nameOf(url); if (need[f] === 1) { need[f] = 2; got += X.s[f]; } };
+      try {
+        performance.getEntriesByType("resource").forEach(function (e) { mark(e.name); });
+        new PerformanceObserver(function (l) { l.getEntries().forEach(function (e) { mark(e.name); }); }).observe({ type: "resource", buffered: true });
+      } catch (e) {}
+      var shown = 0, target = 0, done = false, extra = 0;
+      var tick = function () {
+        target = done ? 100 : Math.max(extra, Math.min(60, total ? (got / total) * 60 : 0));
+        shown += (target - shown) * (done ? 0.35 : 0.2);
+        if (target - shown < 0.4) shown = target;
+        var v = Math.floor(shown);
+        pctEl.textContent = v + "%";
+        fill.style.transform = "scaleX(" + shown / 100 + ")";
+        L.setAttribute("aria-valuenow", v);
+        if (done && shown >= 100) { L.classList.add("pl-out"); setTimeout(function () { L.remove(); }, 380); return; }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      window.__xlFinish = function () { done = true; };
+      window.__xlSet = function (v) { extra = Math.max(extra, Math.min(99, v)); };
+      // Chốt an toàn: trang lỗi không báo xong thì màn chờ cũng không che mãi.
+      setTimeout(function () { done = true; }, 25000);
+    })();
+  </script>
+  <div id="root"><main data-shell style="min-height:100vh;background:#07101c;color:#fff;padding:80px 24px;font-family:Arial,sans-serif"><div style="max-width:900px;margin:auto"><p style="color:#00d4ff;font-weight:700">Xartisan Studio</p><h1 style="font-size:clamp(32px,6vw,64px);line-height:1.1">Q8 Store Vietnam</h1><p style="max-width:760px;font-size:18px;line-height:1.7;color:#b8c0cc">Website of laser and CNC workshop in Ho Chi Minh City, presenting eight groups of products processed on demand, six-step production process and channel for receiving quotes.</p><section style="margin-top:36px"><p style="line-height:1.7;color:#b8c0cc"><strong>Field:</strong> Factory website made to order <strong>Website:</strong> q8storevietnam.vn</p><h2>The challenge</h2><p style="line-height:1.7;color:#b8c0cc">Products processed to order do not have a fixed price. Customers need to imagine what the factory can do and what the process is like before sending a quote request.</p><h2>Scope of work</h2><ul style="line-height:1.8;color:#b8c0cc"><li>Group the eight processed product lines into separate categories.</li><li>Presents the six-step manufacturing process from design consultation to delivery.</li><li>Build a flow to receive quote requests for both individual and business units.</li><li>Develop a guide and news blog area for SEO.</li></ul><h2>Deliverables</h2><ul style="line-height:1.8;color:#b8c0cc"><li>The workshop's processing capacity is presented by specific product groups.</li><li>Customers understand the process before submitting a request, reducing communication rounds.</li><li>The website has a content foundation to develop natural search.</li></ul><p style="line-height:1.7;color:#9aa6b4">Sample products and production capacity information provided by customers.</p><p><a style="color:#00d4ff" href="/du-an">View all completed projects</a></p></section><nav style="display:flex;flex-wrap:wrap;gap:16px;margin-top:28px"><a style="color:#00d4ff" href="/thiet-ke-website">Services</a><a style="color:#00d4ff" href="/du-an">Projects</a><a style="color:#00d4ff" href="/ho-so-nang-luc">Capability profile</a><a style="color:#00d4ff" href="/lien-he">Contact</a></nav></div></main></div>
+  <noscript>
+    <main style="max-width:900px;margin:auto;padding:24px;font-family:Arial,sans-serif;color:#222">
+      <h1>Xartisan Studio - Your website is an asset, built right and run every month</h1>
+      <p>Xartisan Studio builds business websites and sales websites like an asset: you own 100%, Xartisan Studio protects, Maintain and develop the website to bring in customers. Contact WhatsApp 0435 878 929 for advice and to receive a quote.</p>
+      <p>Xartisan Studio · Da Nang, Vietnam Nam.</p>
+      <ul>
+        <li>Setup package: build the foundation of a business website or sales website, hand over 100% ownership.</li>
+        <li>Basic monthly operations: asset preservation, backup, monitoring, updating, reporting.</li>
+        <li>Monthly operation Growth: asset development, content, SEO, conversion optimization.</li>
+        <li>Monthly operations Performance: revenue growth, advertising, CRM, KPI, weekly reports.</li>
+        <li>Costs quoted separately after we discuss your goals.</li>
+      </ul>
+      <p><a href="tel:+61435878929">Call 0435 878 929</a> | <a
+          href="mailto:hello@xartisan.studio">hello@xartisan.studio</a></p>
+    </main>
+  </noscript>
+</body>
+
+</html>

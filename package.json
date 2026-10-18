@@ -1,0 +1,32 @@
+{
+  "name": "ximitech-clone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "1:1 static clone of ximitech.vn (91 sitemap routes + search), served by a zero-dependency Node server. site/ is the deployable website; upstream/ is the raw origin snapshot; tools/ holds the sync, build and QA pipeline.",
+  "scripts": {
+    "serve": "node server/serve.mjs",
+    "start": "node server/serve.mjs",
+    "mirror": "node tools/sync/mirror.mjs",
+    "sync:all": "node tools/sync/mirror.mjs && node tools/sync/dl-union.mjs && node tools/sync/probe-media.mjs",
+    "probe-media": "node tools/sync/probe-media.mjs",
+    "build:site": "node tools/build/build-site.mjs",
+    "extract:data": "node tools/build/extract-data.mjs",
+    "qa:parity": "node tools/qa/parity.mjs",
+    "qa:shoot": "node tools/qa/shoot.mjs",
+    "qa:diff": "node tools/qa/diff2.mjs research/shots2 research/cloneshots2 research/diffs2",
+    "qa:diag": "node tools/qa/diag.mjs",
+    "qa:map": "node tools/qa/map.mjs",
+    "qa:hash": "node tools/qa/hash-site.mjs",
+    "i18n:catalog": "node tools/i18n/catalog.mjs",
+    "i18n:translate": "python tools/i18n/translate.py",
+    "i18n:apply": "node tools/i18n/apply.mjs",
+    "i18n:verify": "node tools/i18n/crawl.mjs http://127.0.0.1:8788 research/i18n/routes.txt research/i18n/final.json",
+    "video:capture": "node tools/video/capture.mjs",
+    "video:render16": "node tools/video/render.mjs 16 research/video-en/frames-16 1920 1080 66.47 30 0",
+    "video:render9": "node tools/video/render.mjs 9 research/video-en/frames-9 720 1280 66.47 30 0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

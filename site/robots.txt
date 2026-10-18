@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Bot tìm kiếm AI — cho phép để website được trích dẫn trong ChatGPT, Claude, Perplexity.
+# Lưu ý phân biệt: chặn GPTBot/ClaudeBot chỉ chặn việc huấn luyện mô hình,
+# KHÔNG ảnh hưởng tới khả năng được trích dẫn trong kết quả tìm kiếm AI.
+# Ba bot dưới đây mới là bot quyết định việc trích dẫn đó.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://xartisan.studio/sitemap.xml
