@@ -1,29 +1,24 @@
-# QA tool dependencies (installed only when running the pixel-diff harness)
+# dependencies
 node_modules/
 
-# generated content extracted from bundles
+# generated local data
 data/
 
-# local runtime files
-research/runtime/
-
-# large, regenerable evidence
-research/rea/rea-js-analysis*.json
-research/rea/*.err
-research/shots/
-research/shots2/
-research/shots2m/
-research/cloneshots/
-research/cloneshots2/
-research/cloneshots2m/
-research/diffs/
-research/diffs2/
-research/diffs2m/
-research/recap/
-research/viewport/
-
-# mirror inputs and working evidence are local-only; site/ is the deployable output
+# local working material, not part of the published site
 upstream/
 research/
 *.log
 
+# local build, translation and QA pipeline
+tools/build/
+tools/i18n/
+tools/lib/
+tools/qa/
+tools/sync/
+tools/verify/
+tools/video/
+tools/inspect-bundles.mjs
+
+# editor and OS files
+.DS_Store
+Thumbs.db

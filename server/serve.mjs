@@ -1,5 +1,5 @@
 // Zero-dependency static server for the Xartisan Studio site.
-// Mirrors the origin's behavior: clean directory URLs, plain 404 for unknown paths,
+// Supports clean directory URLs, plain 404 for unknown paths,
 // byte-range support for media, sensible cache headers.
 // Usage: node server/serve.mjs  (PORT env overrides default 8788)
 import http from "node:http";
@@ -13,14 +13,14 @@ const ROOT = path.resolve(__dirname, "..", "site");
 const PORT = Number(process.env.PORT || 8788);
 const HOST = process.env.HOST || "127.0.0.1";
 
-// Host-parity behaviors observed on ximitech.vn:
+// URL behavior:
 //  - /dich-vu (and /dich-vu/) 301 -> /thiet-ke-website (host-level redirect; app also aliases it)
 //  - unknown paths under /blog/ and /du-an/ serve the generic SPA shell with 200
 //  - every other unknown path (incl. missing assets) serves the site's 404 page with status 404
 const REDIRECTS = new Map([["/dich-vu", "/thiet-ke-website"]]);
 const SHELL_PAGE = path.join(ROOT, "index.html");
 const NOT_FOUND_PAGE = path.join(ROOT, "404", "index.html");
-// Exact 301 body served by the origin's host (nginx), replayed verbatim.
+// Exact 301 body kept for stable redirect output.
 const REDIRECT_BODY = "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.31.6</center>\r\n</body>\r\n</html>\r\n";
 
 const MIME = {
