@@ -97,7 +97,7 @@ const server = http.createServer(async (req, res) => {
     }
     let status = 200;
     if (!found) {
-      // Not a mirrored file: reproduce origin's fallback behavior.
+      // No matching file: use the site's configured fallback.
       const hasExt = path.extname(norm) !== "";
       const nsShell = !hasExt && /^\/(blog|du-an)(\/|$)/.test(norm);
       const page = nsShell ? SHELL_PAGE : NOT_FOUND_PAGE;
