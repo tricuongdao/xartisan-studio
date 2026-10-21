@@ -49,7 +49,7 @@
   },
   {
     "from": "/tuyen-dung",
-    "to": "/careers"
+    "to": "/about"
   },
   {
     "from": "/du-an",
@@ -346,5 +346,9 @@
   {
     "from": "/dich-vu",
     "to": "/website-design"
+  },
+  {
+    "from": "/careers",
+    "to": "/about"
   }
 ]
