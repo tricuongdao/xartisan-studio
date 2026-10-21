@@ -33,7 +33,7 @@
   },
   {
     "from": "/ho-so-nang-luc",
-    "to": "/capabilities"
+    "to": "/competency"
   },
   {
     "from": "/quy-trinh-thiet-ke-website",
@@ -53,7 +53,7 @@
   },
   {
     "from": "/du-an",
-    "to": "/projects"
+    "to": "/project-demo"
   },
   {
     "from": "/tim-kiem",
@@ -350,5 +350,13 @@
   {
     "from": "/careers",
     "to": "/about"
+  },
+  {
+    "from": "/projects",
+    "to": "/project-demo"
+  },
+  {
+    "from": "/capabilities",
+    "to": "/competency"
   }
 ]

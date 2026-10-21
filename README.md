@@ -1,7 +1,7 @@
 # Xartisan Studio website
 
 Marketing site for **Xartisan Studio**, a web design, development and website operations studio.
-It presents the studio's services, selected work, pricing, capability profile and contact
+It presents the studio's services, selected work, pricing, Competency and contact
 details across 90 content pages plus site search.
 
 - Website: https://xartisan.studio
@@ -46,8 +46,8 @@ Public sections use English URLs:
 
 `/website-design`, `/business-website-design`, `/ecommerce-website-design`,
 `/landing-page-design`, `/web-app-development`, `/seo-services`, `/website-design-pricing`,
-`/website-design-process`, `/website-maintenance`, `/about`, `/capabilities`,
-`/contact`, `/projects`, `/blog`, `/search`.
+`/website-design-process`, `/website-maintenance`, `/about`, `/competency`,
+`/contact`, `/project-demo`, `/blog`, `/search`.
 
 Project and article slugs are English too. Legacy Vietnamese URLs return a 301 to the matching
 English page. The map lives in `site/redirects.json`; `site/_redirects` contains the same rules for
