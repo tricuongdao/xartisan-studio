@@ -22,3 +22,6 @@ tools/inspect-bundles.mjs
 # editor and OS files
 .DS_Store
 Thumbs.db
+# Cloudflare Workers local state (wrangler dev / deploy cache)
+.wrangler/
+.dev.vars*
