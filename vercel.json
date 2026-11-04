@@ -1,0 +1,520 @@
+{
+  "outputDirectory": "site",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=(), payment=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/uploads/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/bg/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/thiet-ke-website",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/thiet-ke-website-doanh-nghiep",
+      "destination": "/business-website-design",
+      "permanent": true
+    },
+    {
+      "source": "/thiet-ke-website-ban-hang",
+      "destination": "/ecommerce-website-design",
+      "permanent": true
+    },
+    {
+      "source": "/thiet-ke-landing-page",
+      "destination": "/landing-page-design",
+      "permanent": true
+    },
+    {
+      "source": "/lap-trinh-web-app",
+      "destination": "/web-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/dich-vu-seo-website",
+      "destination": "/seo-services",
+      "permanent": true
+    },
+    {
+      "source": "/bang-gia-thiet-ke-website",
+      "destination": "/website-design-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/gioi-thieu",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/ho-so-nang-luc",
+      "destination": "/competency",
+      "permanent": true
+    },
+    {
+      "source": "/quy-trinh-thiet-ke-website",
+      "destination": "/website-design-process",
+      "permanent": true
+    },
+    {
+      "source": "/bao-hanh-bao-tri-website",
+      "destination": "/website-maintenance",
+      "permanent": true
+    },
+    {
+      "source": "/lien-he",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/tuyen-dung",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/du-an",
+      "destination": "/project-demo",
+      "permanent": true
+    },
+    {
+      "source": "/tim-kiem",
+      "destination": "/search",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/vinhomes-saigon-park",
+      "destination": "/projects/vinhomes-saigon-park",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/brothers-renovate",
+      "destination": "/projects/brothers-renovate",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/palm-river-huong-viet",
+      "destination": "/projects/palm-river-huong-viet",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/hqn-group",
+      "destination": "/projects/hqn-group",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/dong-khoi-thuong-hieu-viet",
+      "destination": "/projects/dong-khoi-viet-brand",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/woodland",
+      "destination": "/projects/woodland",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/quoc-bao-computer",
+      "destination": "/projects/quoc-bao-computer",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/do-hai-vuong-nam",
+      "destination": "/projects/do-hai-vuong-nam",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/lumine-cloud",
+      "destination": "/projects/lumine-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/tcs-global",
+      "destination": "/projects/tcs-global",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/leaf-hotel-danang-ta",
+      "destination": "/projects/leaf-hotel-da-nang",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/kts-luu-van-vu",
+      "destination": "/projects/kts-luu-van-vu",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/miea-noi-that",
+      "destination": "/projects/miea-interiors",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/danh-ngoc-heavy-transport",
+      "destination": "/projects/danh-ngoc-heavy-transport",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/asteraceae",
+      "destination": "/projects/asteraceae",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/dastin-hullor",
+      "destination": "/projects/dastin-hullor",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/raymoire",
+      "destination": "/projects/raymoire",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/stwatch",
+      "destination": "/projects/stwatch",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/jk-florist",
+      "destination": "/projects/jk-florist",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/blue-whale-trading",
+      "destination": "/projects/blue-whale-trading",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/aplus-billiards",
+      "destination": "/projects/aplus-billiards",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/phong-thuy-a-dong",
+      "destination": "/projects/feng-shui-a-dong",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/hrm-manh-long-hoa-lu",
+      "destination": "/projects/hrm-manh-long-hoa-lu",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/apes-studio",
+      "destination": "/projects/apes-studio",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/q8-store-vietnam",
+      "destination": "/projects/q8-store-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/shi-thai",
+      "destination": "/projects/shi-thai",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/glambot-vietnam",
+      "destination": "/projects/glambot-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/zixue",
+      "destination": "/projects/zixue",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/astra-education",
+      "destination": "/projects/astra-education",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/lamsala",
+      "destination": "/projects/lamsala",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/ppf-dong-nai",
+      "destination": "/projects/ppf-dong-nai",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/engmind-study",
+      "destination": "/projects/engmind-study",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/hoc-nghe-truc-tuyen",
+      "destination": "/projects/online-vocational-training",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/doux-nails-lounge",
+      "destination": "/projects/doux-nails-lounge",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/nam-key",
+      "destination": "/projects/nam-key",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/court-vision",
+      "destination": "/projects/court-vision",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/propfirm-edge",
+      "destination": "/projects/propfirm-edge",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/farmstay-viet-nam",
+      "destination": "/projects/farmstay-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/md-decor-pro",
+      "destination": "/projects/md-decor-pro",
+      "permanent": true
+    },
+    {
+      "source": "/du-an/vinfast-huy-hieu",
+      "destination": "/projects/vinfast-huy-hieu",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ngan-sach-website-nam-dau",
+      "destination": "/blog/website-budget-first-year",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bao-tri-website-gom-nhung-gi",
+      "destination": "/blog/website-maintenance-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/blog/do-luong-website-ga4-search-console",
+      "destination": "/blog/website-analytics-ga4-search-console",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bao-mat-website-ssl-sao-luu-cap-nhat",
+      "destination": "/blog/website-security-ssl-backups-updates",
+      "permanent": true
+    },
+    {
+      "source": "/blog/checklist-landing-page-chay-quang-cao",
+      "destination": "/blog/landing-page-checklist-for-ads",
+      "permanent": true
+    },
+    {
+      "source": "/blog/khi-nao-nen-lam-lai-website",
+      "destination": "/blog/when-to-redesign-your-website",
+      "permanent": true
+    },
+    {
+      "source": "/blog/seo-local-google-business-profile",
+      "destination": "/blog/local-seo-google-business-profile",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ban-tren-san-hay-lam-website-rieng",
+      "destination": "/blog/marketplace-or-own-website",
+      "permanent": true
+    },
+    {
+      "source": "/blog/toi-uu-toc-do-website-core-web-vitals",
+      "destination": "/blog/website-speed-core-web-vitals",
+      "permanent": true
+    },
+    {
+      "source": "/blog/viet-noi-dung-website",
+      "destination": "/blog/website-content-writing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chi-phi-an-khi-lam-website-gia-re",
+      "destination": "/blog/hidden-costs-of-cheap-websites",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hop-dong-thiet-ke-website",
+      "destination": "/blog/website-design-contract",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ten-mien-va-hosting-cho-doanh-nghiep",
+      "destination": "/blog/domain-and-hosting-for-business",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-doanh-nghiep-can-nhung-trang-gi",
+      "destination": "/blog/pages-every-business-website-needs",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chi-phi-thiet-ke-website",
+      "destination": "/blog/website-design-cost",
+      "permanent": true
+    },
+    {
+      "source": "/blog/landing-page-la-gi",
+      "destination": "/blog/what-is-a-landing-page",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-chuan-seo-la-gi",
+      "destination": "/blog/what-is-an-seo-friendly-website",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tu-lam-website-hay-thue-thiet-ke",
+      "destination": "/blog/diy-or-hire-a-designer",
+      "permanent": true
+    },
+    {
+      "source": "/blog/thiet-ke-website-ban-hang-can-gi",
+      "destination": "/blog/what-an-ecommerce-website-needs",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chon-don-vi-thiet-ke-website-uy-tin",
+      "destination": "/blog/how-to-choose-a-web-design-agency",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-la-tai-san-so-cua-doanh-nghiep",
+      "destination": "/blog/website-as-a-digital-asset",
+      "permanent": true
+    },
+    {
+      "source": "/blog/doanh-nghiep-can-so-huu-gi-sau-khi-lam-website",
+      "destination": "/blog/what-businesses-own-after-a-website-build",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tam-nhin-website-doanh-nghiep-trong-3-nam",
+      "destination": "/blog/three-year-website-vision",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lo-trinh-phat-trien-website-sau-ban-giao",
+      "destination": "/blog/website-roadmap-after-launch",
+      "permanent": true
+    },
+    {
+      "source": "/blog/van-hanh-website-nhu-mot-tai-san",
+      "destination": "/blog/operating-a-website-as-an-asset",
+      "permanent": true
+    },
+    {
+      "source": "/blog/do-luong-hieu-qua-website-bang-ket-qua-kinh-doanh",
+      "destination": "/blog/measuring-website-results-in-revenue",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-trong-hanh-trinh-khach-hang-doanh-nghiep",
+      "destination": "/blog/website-in-the-customer-journey",
+      "permanent": true
+    },
+    {
+      "source": "/blog/website-rieng-va-cac-kenh-so-doanh-nghiep",
+      "destination": "/blog/owned-website-vs-digital-channels",
+      "permanent": true
+    },
+    {
+      "source": "/blog/noi-dung-website-la-tai-san-tich-luy",
+      "destination": "/blog/website-content-as-compounding-asset",
+      "permanent": true
+    },
+    {
+      "source": "/blog/su-menh-tam-nhin-xartisan-studio-website-la-tai-san",
+      "destination": "/blog/studio-mission-vision-website-as-an-asset",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tong-chi-phi-so-huu-website-3-nam",
+      "destination": "/blog/total-cost-of-owning-a-website-3-years",
+      "permanent": true
+    },
+    {
+      "source": "/dich-vu",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/project-demo",
+      "permanent": true
+    },
+    {
+      "source": "/capabilities",
+      "destination": "/competency",
+      "permanent": true
+    }
+  ]
+}

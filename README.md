@@ -5,8 +5,8 @@ It presents the studio's services, selected work, pricing, Competency and contac
 details across 90 content pages plus site search.
 
 - Website: https://xartisan.studio
-- Email: hello@xartisan.studio
-- WhatsApp: +61 435 878 929
+- Email: vincent@xartisan.studio
+- WhatsApp: +61 416 108 649
 
 ## Stack
 
@@ -55,8 +55,12 @@ hosts that support Netlify-style redirects.
 
 ## Deploy
 
+See **[DEPLOY.md](DEPLOY.md)** for host-by-host steps (Netlify, Cloudflare Pages, Vercel, plain
+nginx/S3), DNS setup and the post-deploy checks. Run `npm run check` before publishing.
+
+
 Publish the contents of `site/` to any static host. Point the host's 404 response at
-`site/404/index.html` and keep directory index resolution enabled so clean URLs continue to work.
+`site/404.html` and keep directory index resolution enabled so clean URLs continue to work.
 Load `site/_redirects` if the host supports Netlify-style redirects, or translate
 `site/redirects.json` into the host's redirect configuration. The local Node server is for preview
 only; it is not required in production.
@@ -67,8 +71,8 @@ only; it is not required in production.
 | --- | --- |
 | Name | Xartisan Studio |
 | Domain | xartisan.studio |
-| Email | hello@xartisan.studio |
-| WhatsApp | 0435 878 929 (`+61 435 878 929`) |
+| Email | vincent@xartisan.studio |
+| WhatsApp | 0416 108 649 (`+61 416 108 649`) |
 | Palette | Navy and cyan |
 | Theme | Light by default; navy dark mode |
 | Logo | Bold cyan X with outlined navy right stroke and sans wordmark |

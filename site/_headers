@@ -1,0 +1,25 @@
+# Security + caching. Supported by Netlify and Cloudflare Pages.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+
+# Content-hashed bundles (the ?v= token changes whenever content changes)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/uploads/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/bg/*
+  Cache-Control: public, max-age=604800
+
+# HTML must revalidate so deploys show up immediately
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

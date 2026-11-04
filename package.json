@@ -6,7 +6,8 @@
   "description": "Xartisan Studio website: static marketing site for a web design, development and website operations studio. site/ is the deployable public root; server/serve.mjs is the local preview server.",
   "scripts": {
     "serve": "node server/serve.mjs",
-    "start": "node server/serve.mjs"
+    "start": "node server/serve.mjs",
+    "check": "node tools/predeploy-check.mjs"
   },
   "engines": {
     "node": ">=20"

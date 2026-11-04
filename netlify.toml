@@ -1,0 +1,9 @@
+[build]
+  publish = "site"
+  # No build step: the committed site/ tree is the artifact.
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Legacy Vietnamese routes live in site/_redirects (90 rules, 301s).
+# Custom 404 is site/404.html.

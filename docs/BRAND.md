@@ -6,8 +6,8 @@
 | --- | --- |
 | Name | Xartisan Studio |
 | Domain | xartisan.studio |
-| Email | hello@xartisan.studio |
-| WhatsApp | 0435 878 929 (`+61 435 878 929`, `wa.me/61435878929`) |
+| Email | vincent@xartisan.studio |
+| WhatsApp | 0416 108 649 (`+61 416 108 649`, `wa.me/61416108649`) |
 | Positioning | Websites built as assets |
 
 ## Logo
@@ -67,5 +67,5 @@ Light is the default. The theme toggle stores the visitor's choice in `xartisan-
 
 ## Contact
 
-Use `hello@xartisan.studio` for email and WhatsApp `+61 435 878 929` for messaging. Link WhatsApp as
-`https://wa.me/61435878929`.
+Use `vincent@xartisan.studio` for email and WhatsApp `+61 416 108 649` for messaging. Link WhatsApp as
+`https://wa.me/61416108649`.
