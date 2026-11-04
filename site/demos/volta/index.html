@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volta — Electric scooters for the everyday</title>
+<meta name="description" content="Australian electric scooters with removable batteries, up to 90 km of range and servicing on your doorstep. Book a test ride in Sydney, Melbourne, Brisbane or Perth.">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preload" href="assets/fonts/Inter-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:site_name" content="Volta">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Volta — electric scooter storefront demo">
+<meta property="og:description" content="Static ecommerce demo with a real-time 3D product configurator, cart and checkout flow.">
+<meta property="og:url" content="https://tricuongdao.github.io/volta-ecommerce-demo/">
+<meta property="og:image" content="https://tricuongdao.github.io/volta-ecommerce-demo/docs/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b5cab">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232743E8'/%3E%3Cpath d='M9 10l7 13 7-13' fill='none' stroke='%23F3F0E9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="announce">Free metro delivery · 5-year warranty · <span>Book a test ride this week</span></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">VOLTA<sup>®</sup></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="shop.html">Scooters</a>
+      <a href="#technology">Technology</a>
+      <a href="#ownership">Ownership</a>
+      <a href="#stores">Stores</a>
+      <a href="#journal">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" type="button" data-open-cart><span data-cart-label>Bag</span> <span class="cart-count" data-cart-count>0</span></button>
+      <a class="btn btn--sm btn--primary" href="#book">Book a test ride</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="shop.html">Scooters</a>
+  <a href="#technology">Technology</a>
+  <a href="#ownership">Ownership</a>
+  <a href="#stores">Stores</a>
+  <a href="#journal">Journal</a>
+  <a class="btn btn--primary" href="#book">Book a test ride</a>
+</div>
+
+<main id="main">
+
+  <!-- ======================= HERO / 3D ======================= -->
+  <section class="hero3d" id="hero">
+    <div class="hero3d-title">
+      <h1><span class="brand-line">Volta</span><span class="sub-line">Electric scooters, quietly.</span></h1>
+    </div>
+    <div class="hero3d-stage" id="heroStage" aria-label="Interactive 3D model of the Volta One S — drag to rotate"></div>
+    <div class="container hero3d-ui">
+      <div class="hero3d-copy">
+        <p class="lede">Four scooters, one quiet idea. Removable batteries, up to 90 km of range and servicing that comes to you.</p>
+        <div class="hero-cta">
+          <a class="btn btn--dark" href="shop.html">Explore the range
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#book">Book a test ride</a>
+        </div>
+      </div>
+      <div class="hero3d-cue" aria-hidden="true"><span>Drag to rotate</span><i></i></div>
+      <div class="hero3d-paint">
+        <div class="paint-head"><span class="mono">Paint</span><strong id="heroColourName">Cobalt</strong></div>
+        <div class="paint-dots" id="heroSwatches" role="group" aria-label="Choose a paint colour">
+          <button type="button" data-colour="cobalt" aria-label="Cobalt" aria-pressed="true" style="background:#1F43E6"></button>
+          <button type="button" data-colour="graphite" aria-label="Graphite" aria-pressed="false" style="background:#2C3136"></button>
+          <button type="button" data-colour="bone" aria-label="Bone" aria-pressed="false" style="background:#E7E1D3"></button>
+          <button type="button" data-colour="sage" aria-label="Sage" aria-pressed="false" style="background:#9AAB93"></button>
+          <button type="button" data-colour="clay" aria-label="Clay" aria-pressed="false" style="background:#B25A3D"></button>
+        </div>
+        <p class="paint-note">Volta One S · from A$3,890</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TICKER ======================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><i>◆</i> Removable batteries <i>◆</i> Up to 90 km range <i>◆</i> 5-year warranty, 8 on the pack <i>◆</i> 0% finance available <i>◆</i> Free metro delivery <i>◆</i> Servicing that comes to you</span>
+      <span class="ticker-item"><i>◆</i> Removable batteries <i>◆</i> Up to 90 km range <i>◆</i> 5-year warranty, 8 on the pack <i>◆</i> 0% finance available <i>◆</i> Free metro delivery <i>◆</i> Servicing that comes to you</span>
+    </div>
+  </div>
+
+  <!-- ======================= RANGE ======================= -->
+  <section class="section" id="range">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 01 — The range</p>
+        <h2 class="h2">Four scooters.<br><em>One quiet obsession.</em></h2>
+        <p class="lede">Every Volta shares the same removable battery, the same warranty and the same refusal to make noise. Pick the one that fits your week.</p>
+        <a class="link-arrow" href="shop.html">View all models
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </header>
+      <div class="range-grid" id="rangeGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======================= CONFIGURATOR ======================= -->
+  <section class="config" id="configure">
+    <div class="container config-grid">
+      <div class="config-media" data-reveal>
+        <div class="config-plinth" aria-hidden="true"></div>
+        <div id="configBike"></div>
+        <p class="config-fig">Fig. 01 — One S, studio profile</p>
+      </div>
+      <div class="config-panel" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 02 — Build yours</p>
+        <h2 class="h2">Choose your <em>colour.</em></h2>
+        <div class="config-models" id="configModels" role="group" aria-label="Model">
+          <button class="chip" type="button" data-model="lite" aria-pressed="false">Lite</button>
+          <button class="chip" type="button" data-model="one" aria-pressed="false">One</button>
+          <button class="chip" type="button" data-model="one-s" aria-pressed="true">One S</button>
+          <button class="chip" type="button" data-model="cargo" aria-pressed="false">Cargo</button>
+        </div>
+        <div class="config-swatches" id="configColours" role="group" aria-label="Colour"></div>
+        <p class="config-colour-name" id="configColourName">Colour — <strong>Cobalt</strong></p>
+        <dl class="config-specs" id="configSpecs"></dl>
+        <div class="config-buy">
+          <p class="config-price" id="configPrice"></p>
+          <button class="btn btn--primary" type="button" id="configAdd" data-id="one-s" data-colour="cobalt">Add to bag
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p class="form-note" style="color:var(--muted)">Delivered assembled, charged and ready to ride. <span id="configName">Volta One S</span> shown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TECHNOLOGY ======================= -->
+  <section class="tech section" id="technology">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 03 — Engineering</p>
+        <h2 class="h2">Built around<br><em>the battery.</em></h2>
+        <p class="lede">Not a petrol scooter with a motor bolted on. Every component starts from the pack and works outward — which is why it weighs less, rides quieter and needs almost nothing from you.</p>
+      </header>
+      <div class="tech-grid">
+        <div class="tech-list" id="techList" role="tablist" aria-label="Technology"></div>
+        <div class="tech-panel" id="techPanel" role="tabpanel" aria-live="polite" data-reveal></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= BAND ======================= -->
+  <section class="band">
+    <div class="band-grid">
+      <div class="band-cell"><strong data-count="9200">0</strong><span>Riders on the road</span></div>
+      <div class="band-cell"><strong data-count="41">0</strong><span>Million electric km</span></div>
+      <div class="band-cell"><strong data-count="4">0</strong><span>Showrooms</span></div>
+      <div class="band-cell"><strong data-count="98">0</strong><span>% would buy again</span></div>
+    </div>
+  </section>
+
+  <!-- ======================= OWNERSHIP ======================= -->
+  <section class="section" id="ownership">
+    <div class="container own-grid">
+      <div data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 04 — Ownership</p>
+        <h2 class="h2" style="margin-top:1.25rem">Less to run.<br><em>Nothing to fuss over.</em></h2>
+        <p class="lede" style="margin-top:1.25rem">A Volta costs about 1.2 cents a kilometre to run. No oil, no filters, no fuel, and a service interval measured in thousands of kilometres rather than months.</p>
+        <ul class="own-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m20 6-11 11-5-5"/></svg> Free first service at 1,000 km, then A$149 flat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m20 6-11 11-5-5"/></svg> 0% finance over 12, 24 or 36 months</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m20 6-11 11-5-5"/></svg> 30-day return period, no questions asked</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m20 6-11 11-5-5"/></svg> Mobile servicing in all four metro areas</li>
+        </ul>
+      </div>
+      <div class="finance" data-reveal>
+        <div class="finance-head">
+          <p class="mono">Estimate your week</p>
+          <p class="mono">0% p.a.</p>
+        </div>
+        <p class="finance-weekly" id="finWeekly">A$0<small> / week</small></p>
+        <p style="font-size:.75rem;color:var(--muted);margin:.35rem 0 1.75rem" id="finMonthly"></p>
+        <div class="field">
+          <label for="finModel">Model</label>
+          <select id="finModel">
+            <option value="lite">Volta Lite — A$1,990</option>
+            <option value="one">Volta One — A$2,990</option>
+            <option value="one-s" selected>Volta One S — A$3,890</option>
+            <option value="cargo">Volta Cargo — A$4,490</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="finDeposit">Deposit <b id="finDepositOut">10%</b></label>
+          <input type="range" id="finDeposit" min="0" max="50" step="5" value="10">
+        </div>
+        <div class="field">
+          <label>Term</label>
+          <div class="term-row" id="finTerm">
+            <button type="button" data-term="12" aria-pressed="false">12 mo</button>
+            <button type="button" data-term="24" aria-pressed="true">24 mo</button>
+            <button type="button" data-term="36" aria-pressed="false">36 mo</button>
+          </div>
+        </div>
+        <p class="finance-note" id="finAmount"></p>
+        <p class="finance-note">Illustration only — 0% p.a. on approved applications, 10% minimum deposit. Fees and conditions apply.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= REVIEWS ======================= -->
+  <section class="section section--tight" id="reviews">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 05 — Riders</p>
+        <h2 class="h2">4.8 out of 5,<br><em>across 430 rides.</em></h2>
+        <p class="lede">Reviews collected by email from verified owners. We publish the four-star ones too.</p>
+        <a class="link-arrow" href="#book">Book a test ride
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </header>
+      <div class="reviews-grid" id="reviewGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======================= STORES ======================= -->
+  <section class="section" id="stores">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 06 — Stores</p>
+        <h2 class="h2">Come and sit<br><em>on one.</em></h2>
+        <p class="lede">Four showrooms, one workshop standard. Every store has demo units of the full range — book ahead and we'll have your size ready.</p>
+      </header>
+      <div class="stores-grid" id="storeGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======================= JOURNAL ======================= -->
+  <section class="section section--tight" id="journal">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 07 — Journal</p>
+        <h2 class="h2">Notes from<br><em>the quiet lane.</em></h2>
+        <a class="link-arrow" href="#">All stories
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </header>
+      <div class="journal-grid" id="journalGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======================= BOOK ======================= -->
+  <section class="book section" id="book">
+    <div class="container book-grid">
+      <div class="book-copy" data-reveal>
+        <p class="eyebrow"><span class="dot"></span> 08 — Test ride</p>
+        <h2 class="h2" style="margin-top:1.25rem">Twenty minutes.<br><em>You'll get it.</em></h2>
+        <p class="lede">Pick a store, pick a time, bring your licence. We'll fit a helmet, walk you through the controls and send you up the street with a route map.</p>
+        <ul class="book-points">
+          <li><i></i> No deposit, no pressure, no sales script</li>
+          <li><i></i> Full range available to ride</li>
+          <li><i></i> Bring your current licence and a helmet if you have one</li>
+          <li><i></i> Trade-in valuations on the day</li>
+        </ul>
+      </div>
+      <div class="book-form" data-reveal>
+        <form id="bookForm" data-demo-form data-success="Test ride requested — we'll confirm by SMS within the hour." novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="bookName">Full name</label>
+              <input id="bookName" name="name" type="text" autocomplete="name" required placeholder="Alex Nguyen">
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="bookPhone">Mobile</label>
+              <input id="bookPhone" name="phone" type="tel" autocomplete="tel" required placeholder="0400 000 000">
+              <span class="field-error">Please enter a mobile number.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bookEmail">Email</label>
+            <input id="bookEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bookModel">Model</label>
+              <select id="bookModel" name="model" required>
+                <option value="">Choose a model</option>
+                <option>Volta Lite</option>
+                <option>Volta One</option>
+                <option selected>Volta One S</option>
+                <option>Volta Cargo</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bookCity">Store</label>
+              <select id="bookCity" name="city" required>
+                <option value="">Choose a store</option>
+                <option>Sydney — Alexandria</option>
+                <option>Melbourne — Richmond</option>
+                <option>Brisbane — Fortitude Valley</option>
+                <option>Perth — Northbridge</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Request a test ride</button>
+          <p class="form-note">By booking you agree to our demo terms. We'll only text you about this ride.</p>
+        </form>
+        <div class="form-success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6 9 17l-5-5"/></svg>
+          <h3>See you soon.</h3>
+          <p>Your test ride request is in. We'll confirm the time by SMS within the hour — usually much sooner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">VOLTA<sup>®</sup></a>
+        <p>Electric scooters built for Australian streets. Designed in Melbourne, ridden everywhere.</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn--dark btn--sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h4>Scooters</h4>
+        <a href="shop.html?filter=city">City</a>
+        <a href="shop.html?filter=sport">Sport</a>
+        <a href="shop.html?filter=utility">Utility</a>
+        <a href="product.html?model=one-s">Volta One S</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ownership</h4>
+        <a href="#ownership">Finance</a>
+        <a href="#technology">Warranty</a>
+        <a href="#book">Servicing</a>
+        <a href="#stores">Stores</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#journal">Journal</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Volta Mobility Pty Ltd · Brisbane, Australia</p>
+      <p class="demo-flag"><i></i> Demo storefront — no real orders are placed</p>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Shipping</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= CART ======================= -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping bag">
+  <div class="drawer-head">
+    <h2>Your bag</h2>
+    <button class="icon-btn" id="drawerClose" type="button" aria-label="Close bag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="ship-bar" id="cartInlineNote">
+      <p>Free metro delivery · 5-year warranty · 30-day returns</p>
+      <div class="track"><div class="fill" style="width:100%"></div></div>
+    </div>
+    <div class="drawer-total"><span>Subtotal (incl. GST)</span><b id="cartTotal">A$0</b></div>
+    <a class="btn btn--primary" href="checkout.html">Checkout
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="drawer-note">Demo store — no payment will be taken.</p>
+  </div>
+</aside>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

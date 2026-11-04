@@ -13,7 +13,7 @@
 /tuyen-dung /about 301
 /du-an /project-demo 301
 /tim-kiem /search 301
-/du-an/vinhomes-saigon-park /projects/vinhomes-saigon-park 301
+/du-an/vinhomes-saigon-park /projects/volta-ecommerce-demo 301
 /du-an/brothers-renovate /projects/brothers-renovate 301
 /du-an/palm-river-huong-viet /projects/palm-river-huong-viet 301
 /du-an/hqn-group /projects/hqn-group 301
@@ -88,3 +88,4 @@
 /careers /about 301
 /projects /project-demo 301
 /capabilities /competency 301
+/projects/vinhomes-saigon-park /projects/volta-ecommerce-demo 301

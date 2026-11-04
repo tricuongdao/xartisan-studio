@@ -61,7 +61,7 @@
   },
   {
     "from": "/du-an/vinhomes-saigon-park",
-    "to": "/projects/vinhomes-saigon-park"
+    "to": "/projects/volta-ecommerce-demo"
   },
   {
     "from": "/du-an/brothers-renovate",
@@ -358,5 +358,9 @@
   {
     "from": "/capabilities",
     "to": "/competency"
+  },
+  {
+    "from": "/projects/vinhomes-saigon-park",
+    "to": "/projects/volta-ecommerce-demo"
   }
 ]

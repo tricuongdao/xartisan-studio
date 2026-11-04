@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Volta</title>
+<meta name="description" content="Complete your Volta order. Demo checkout — no payment is taken.">
+<script>document.documentElement.classList.add("js");</script>
+<meta property="og:site_name" content="Volta">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232743E8'/%3E%3Cpath d='M9 10l7 13 7-13' fill='none' stroke='%23F3F0E9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="announce">Secure demo checkout · <span>No payment will be taken</span></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">VOLTA<sup>®</sup></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="shop.html">Scooters</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#ownership">Ownership</a>
+      <a href="index.html#stores">Stores</a>
+      <a href="index.html#journal">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" type="button" data-open-cart><span data-cart-label>Bag</span> <span class="cart-count" data-cart-count>0</span></button>
+      <a class="btn btn--sm btn--primary" href="index.html#book">Book a test ride</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="shop.html">Scooters</a>
+  <a href="index.html#technology">Technology</a>
+  <a href="index.html#ownership">Ownership</a>
+  <a href="index.html#stores">Stores</a>
+  <a href="index.html#journal">Journal</a>
+  <a class="btn btn--primary" href="index.html#book">Book a test ride</a>
+</div>
+
+<main class="container" id="main">
+  <div id="checkoutGrid">
+    <div class="page-head" style="padding-bottom:0">
+      <p class="eyebrow"><span class="dot"></span> Checkout</p>
+      <h1 style="font-size:clamp(2.4rem,4.5vw,3.6rem);margin-top:1rem">Almost <em class="italic" style="color:var(--cobalt)">yours.</em></h1>
+    </div>
+
+    <div class="checkout">
+      <form id="checkoutForm" novalidate>
+        <section class="co-block">
+          <h2>Contact</h2>
+          <div class="field">
+            <label for="coEmail">Email</label>
+            <input id="coEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+          <label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8125rem;color:var(--ink-2)">
+            <input type="checkbox" checked style="margin-top:.25rem">
+            Email me order updates and the Volta journal. No more than twice a month.
+          </label>
+        </section>
+
+        <section class="co-block">
+          <h2>Delivery</h2>
+          <div class="field-row">
+            <div class="field">
+              <label for="coFirst">First name</label>
+              <input id="coFirst" name="first" type="text" autocomplete="given-name" required>
+              <span class="field-error">Required.</span>
+            </div>
+            <div class="field">
+              <label for="coLast">Last name</label>
+              <input id="coLast" name="last" type="text" autocomplete="family-name" required>
+              <span class="field-error">Required.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="coPhone">Mobile</label>
+            <input id="coPhone" name="phone" type="tel" autocomplete="tel" required placeholder="0400 000 000">
+            <span class="field-error">Required for delivery scheduling.</span>
+          </div>
+          <div class="field">
+            <label for="coAddress">Street address</label>
+            <input id="coAddress" name="address" type="text" autocomplete="street-address" required>
+            <span class="field-error">Required.</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="coSuburb">Suburb</label>
+              <input id="coSuburb" name="suburb" type="text" autocomplete="address-level2" required>
+              <span class="field-error">Required.</span>
+            </div>
+            <div class="field">
+              <label for="coState">State</label>
+              <select id="coState" name="state" autocomplete="address-level1" required>
+                <option value="">Choose</option>
+                <option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option>
+                <option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
+              </select>
+              <span class="field-error">Required.</span>
+            </div>
+          </div>
+          <div class="field" style="max-width:180px">
+            <label for="coPostcode">Postcode</label>
+            <input id="coPostcode" name="postcode" type="text" inputmode="numeric" autocomplete="postal-code" required>
+            <span class="field-error">Required.</span>
+          </div>
+        </section>
+
+        <section class="co-block">
+          <h2>Delivery method</h2>
+          <label style="display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.875rem">
+            <span style="display:flex;gap:.6rem;align-items:center"><input type="radio" name="shipping" value="standard" checked> Metro delivery — 3 to 5 business days</span>
+            <b>Free</b>
+          </label>
+          <label style="display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;font-size:.875rem">
+            <span style="display:flex;gap:.6rem;align-items:center"><input type="radio" name="shipping" value="express"> Express delivery — next business day</span>
+            <b>A$49</b>
+          </label>
+        </section>
+
+        <section class="co-block">
+          <h2>Payment</h2>
+          <div style="border:1px dashed var(--line-strong);border-radius:12px;padding:1rem 1.1rem;font-size:.8125rem;color:var(--ink-2);background:var(--paper-2)">
+            <strong style="color:var(--ink)">This is a demo checkout.</strong>
+            No card is collected and no payment will be taken. Placing the order completes the demo flow and clears your bag.
+          </div>
+          <div class="field" style="margin-top:1rem">
+            <label for="coCard">Card number</label>
+            <input id="coCard" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" disabled>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="coExp">Expiry</label><input id="coExp" type="text" placeholder="12 / 28" disabled></div>
+            <div class="field"><label for="coCvc">CVC</label><input id="coCvc" type="text" placeholder="123" disabled></div>
+          </div>
+          <button class="btn btn--primary btn--block" id="placeOrder" type="submit" style="margin-top:.75rem">Place order
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-note">By placing this order you agree to the demo terms. Nothing will be charged or shipped.</p>
+        </section>
+      </form>
+
+      <aside class="summary">
+        <h2>Order summary</h2>
+        <div id="checkoutItems"></div>
+        <form id="promoForm" style="display:flex;gap:.5rem;margin-top:1rem">
+          <input id="promoInput" type="text" placeholder="Promo code" aria-label="Promo code"
+            style="flex:1;height:42px;padding:0 .8rem;border:1px solid var(--line-strong);border-radius:10px;background:var(--paper);font-size:.8125rem">
+          <button class="btn btn--ghost btn--sm" type="submit">Apply</button>
+        </form>
+        <p id="promoMsg" style="font-size:.6875rem;color:var(--muted);margin-top:.4rem">Try <code>RIDE10</code> for 10% off this demo order.</p>
+        <div class="summary-totals" id="checkoutTotals"></div>
+        <div class="trust-line">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7z"/></svg>
+          Secure checkout · 30-day returns · Australian warranty
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="order-done" id="orderDone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+    <h1>Order confirmed.</h1>
+    <p>Thanks — a real Volta would be on its way within five business days.<br>This demo hasn't charged anything or shipped a thing.</p>
+    <p class="order-id" id="orderId">Order VOL-000000</p>
+    <p style="font-size:.8125rem;color:var(--muted);margin-top:.35rem" id="orderEmail"></p>
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+      <a class="btn btn--primary" href="shop.html">Back to the range</a>
+      <a class="btn btn--ghost" href="index.html">Home</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">VOLTA<sup>®</sup></a>
+        <p>Electric scooters built for Australian streets. Designed in Melbourne, ridden everywhere.</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn--dark btn--sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h4>Scooters</h4>
+        <a href="shop.html?filter=city">City</a>
+        <a href="shop.html?filter=sport">Sport</a>
+        <a href="shop.html?filter=utility">Utility</a>
+        <a href="product.html?model=one-s">Volta One S</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ownership</h4>
+        <a href="index.html#ownership">Finance</a>
+        <a href="index.html#technology">Warranty</a>
+        <a href="index.html#book">Servicing</a>
+        <a href="index.html#stores">Stores</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html#journal">Journal</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Volta Mobility Pty Ltd · Brisbane, Australia</p>
+      <p class="demo-flag"><i></i> Demo storefront — no real orders are placed</p>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Shipping</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping bag">
+  <div class="drawer-head">
+    <h2>Your bag</h2>
+    <button class="icon-btn" id="drawerClose" type="button" aria-label="Close bag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="ship-bar" id="cartInlineNote">
+      <p>Free metro delivery · 5-year warranty · 30-day returns</p>
+      <div class="track"><div class="fill" style="width:100%"></div></div>
+    </div>
+    <div class="drawer-total"><span>Subtotal (incl. GST)</span><b id="cartTotal">A$0</b></div>
+    <a class="btn btn--primary" href="checkout.html">Checkout
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="drawer-note">Demo store — no payment will be taken.</p>
+  </div>
+</aside>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

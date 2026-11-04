@@ -66,7 +66,9 @@ for (const file of htmlFiles) {
 // 2. canonicals
 for (const file of htmlFiles) {
   const r = rel(file);
-  if (r === "404.html" || r === "404/index.html") continue;
+  // Embedded demos (demos/<name>/) are standalone sites with their own <head>;
+  // they are not pages of this site and must not carry our canonical.
+  if (r === "404.html" || r === "404/index.html" || r.startsWith("demos/")) continue;
   const html = readFileSync(file, "utf8");
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   const route = r.endsWith("index.html") ? "/" + r.slice(0, -"index.html".length) : "/" + r;

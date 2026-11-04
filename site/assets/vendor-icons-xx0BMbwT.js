@@ -1,4 +1,4 @@
-import{r as l,R as n}from"./vendor-react-BaqgPuim.js?v=f2b36d9d";/**
+import{r as l,R as n}from"./vendor-react-BaqgPuim.js?v=3bdab63a";/**
  * @license lucide-react v0.462.0 - ISC
  *
  * This source code is licensed under the ISC license.
