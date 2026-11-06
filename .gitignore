@@ -25,3 +25,6 @@ Thumbs.db
 # Cloudflare Workers local state (wrangler dev / deploy cache)
 .wrangler/
 .dev.vars*
+
+# pre-change snapshots (records, pages, images) kept for rollback
+.backup/
